@@ -14,16 +14,20 @@ Placeholders still to replace:
 ## Stage 2 — recommended
 1. **Real content:** real photography, Emi's story, real testimonials,
    studio address, and a Google Maps embed on the Contact page.
-2. **Form handling:** a server action that emails consultation and academy
-   requests (e.g. via Resend), with validation, spam protection, and
-   success/error states. Replaces the UI-only notice in
-   `components/forms/FormShell.tsx`.
+2. ~~**Form handling**~~ — **done (2026-10-12).** Server actions email
+   consultation and academy requests via Resend, with server-side
+   validation, honeypot + minimum-fill-time spam protection, and
+   success/error states. To go live: set `RESEND_API_KEY`,
+   `ENQUIRY_TO_EMAIL` and `ENQUIRY_FROM_EMAIL` (see `.env.example`) and
+   verify the sending domain in Resend.
 3. **SEO & sharing:** Open Graph images for social link previews,
    `sitemap.ts` and `robots.ts`, LocalBusiness structured data, and a
    favicon/logo mark.
 4. **Deploy:** Vercel with the custom domain, plus analytics.
 
 ## Later stages
+- Rate limiting on the form actions (needs a store such as Upstash Redis or
+  Vercel KV) if spam gets past the honeypot.
 - Expand the Academy into nested routes under `app/academy/` (courses, fees,
   intake dates).
 - Individual detail pages for collection pieces.

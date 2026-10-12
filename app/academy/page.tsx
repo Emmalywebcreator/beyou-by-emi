@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
-import FormShell from "@/components/forms/FormShell";
-import { SelectField, TextAreaField, TextField } from "@/components/forms/Field";
+import AcademyInterestForm from "@/components/forms/AcademyInterestForm";
 import { images } from "@/lib/images";
 import { site } from "@/lib/site";
 
@@ -10,8 +9,6 @@ export const metadata: Metadata = {
   title: "Academy",
   description: `${site.academy.name} — learn fashion design and couture tailoring on Sapele Road, Benin City.`,
 };
-
-const interests = ["Beginner fashion design", "Advanced tailoring", "Bridal couture", "Not sure yet"] as const;
 
 export default function AcademyPage() {
   return (
@@ -57,18 +54,7 @@ export default function AcademyPage() {
             intro="Leave your details and we will contact you when admissions open."
           />
           <div className="mt-16">
-            <FormShell submitLabel="Register Interest">
-              <TextField id="name" label="Full name" autoComplete="name" required />
-              <TextField id="phone" label="Phone" type="tel" autoComplete="tel" required />
-              <TextField id="email" label="Email" type="email" autoComplete="email" required />
-              <SelectField id="interest" label="Area of interest" options={interests} />
-              <TextAreaField
-                id="message"
-                label="Message"
-                placeholder="Tell us about your experience and goals."
-                className="sm:col-span-2"
-              />
-            </FormShell>
+            <AcademyInterestForm />
           </div>
         </div>
       </section>

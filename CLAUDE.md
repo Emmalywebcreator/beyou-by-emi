@@ -38,7 +38,10 @@ fashion academy in Benin City. These rules apply to every stage of work.
 
 ## Scope discipline
 - Build only what the current stage asks for. No unrequested features.
-- Forms are UI only until a backend stage is explicitly requested.
+- Forms (consultation, academy interest) submit via server actions in
+  `app/actions/enquiries.ts` and email the studio through Resend
+  (`lib/email.ts`). Validation lives in `lib/enquiries.ts` and is enforced
+  server-side. Config is env-only: see `.env.example`. Never commit secrets.
 
 ## Roadmap
 - Stage status, outstanding placeholders and next-stage recommendations are
