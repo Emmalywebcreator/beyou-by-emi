@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import CTAButton from "@/components/CTAButton";
@@ -7,7 +8,10 @@ import SectionTitle from "@/components/SectionTitle";
 import { InstagramIcon } from "@/components/icons";
 import { images } from "@/lib/images";
 import { processSteps } from "@/lib/process";
+import { businessJsonLd, homeDescription, pageMetadata } from "@/lib/seo";
 import { instagramUrl, site } from "@/lib/site";
+
+export const metadata: Metadata = pageMetadata({ description: homeDescription, path: "/" });
 
 const featuredCollections = [
   { ...images.bridalGown, title: "Bridal", caption: "Gowns and reception looks of quiet, heirloom grandeur." },
@@ -37,6 +41,10 @@ const testimonials = [
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd).replace(/</g, "\\u003c") }}
+      />
       <Hero
         size="full"
         image={images.hero}

@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CTAButton from "@/components/CTAButton";
 import SectionTitle from "@/components/SectionTitle";
 import { InstagramIcon, WhatsAppIcon } from "@/components/icons";
 import { instagramUrl, site, telUrl, whatsappUrl } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Contact",
   description: "Visit the BEYOU by Emi studio in Benin City, or reach us by phone, WhatsApp or Instagram.",
-};
+  path: "/contact",
+});
 
 const label = "text-[0.7rem] font-medium uppercase tracking-[0.3em] text-ink/60";
 

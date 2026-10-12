@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CTAButton from "@/components/CTAButton";
 import Gallery, { type GalleryItem } from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import { images } from "@/lib/images";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Collections",
   description: "Bridal, traditional & aso-ebi, and evening couture by BEYOU by Emi.",
-};
+  path: "/collections",
+});
 
 const collections: { id: string; eyebrow: string; title: string; intro: string; items: GalleryItem[] }[] = [
   {

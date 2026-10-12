@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import AcademyInterestForm from "@/components/forms/AcademyInterestForm";
 import { images } from "@/lib/images";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Academy",
   description: `${site.academy.name} — learn fashion design and couture tailoring on Sapele Road, Benin City.`,
-};
+  path: "/academy",
+});
 
 export default function AcademyPage() {
   return (

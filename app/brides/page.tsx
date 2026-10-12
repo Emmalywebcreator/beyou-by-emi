@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import CTAButton from "@/components/CTAButton";
 import Gallery, { type GalleryItem } from "@/components/Gallery";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import { images } from "@/lib/images";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Brides",
   description: "Real BEYOU by Emi brides and celebrity looks.",
-};
+  path: "/brides",
+});
 
 // PLACEHOLDER captions — replace with real brides and celebrity clients (with their permission).
 const brides: GalleryItem[] = [

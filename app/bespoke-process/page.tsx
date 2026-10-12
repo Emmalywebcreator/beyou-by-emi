@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import CTAButton from "@/components/CTAButton";
 import Hero from "@/components/Hero";
@@ -6,10 +7,11 @@ import SectionTitle from "@/components/SectionTitle";
 import { images } from "@/lib/images";
 import { processSteps } from "@/lib/process";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "The Bespoke Process",
   description: "Consultation, measurements, fittings and delivery — how a BEYOU by Emi piece is made.",
-};
+  path: "/bespoke-process",
+});
 
 export default function BespokeProcessPage() {
   return (

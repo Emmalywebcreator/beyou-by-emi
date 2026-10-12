@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import SectionTitle from "@/components/SectionTitle";
 import ConsultationForm from "@/components/forms/ConsultationForm";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Book a Consultation",
   description: "Request a bespoke consultation with BEYOU by Emi.",
-};
+  path: "/book-consultation",
+});
 
 export default function BookConsultationPage() {
   return (

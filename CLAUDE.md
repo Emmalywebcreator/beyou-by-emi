@@ -43,6 +43,13 @@ fashion academy in Benin City. These rules apply to every stage of work.
   (`lib/email.ts`). Validation lives in `lib/enquiries.ts` and is enforced
   server-side. Config is env-only: see `.env.example`. Never commit secrets.
 
+## SEO
+- Every page exports metadata via `pageMetadata()` from `lib/seo.ts`
+  (title, description, canonical path, social text). New pages must do the
+  same and be added to `app/sitemap.ts`.
+- The site URL comes from `siteUrl` in `lib/site.ts` (env:
+  `NEXT_PUBLIC_SITE_URL`).
+
 ## Roadmap
 - Stage status, outstanding placeholders and next-stage recommendations are
   tracked in `docs/ROADMAP.md`. Read it at the start of each stage and update

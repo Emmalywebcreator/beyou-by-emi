@@ -31,6 +31,16 @@ export const site = {
   },
 } as const;
 
+// Public address of the live site, used for canonical URLs, the sitemap and
+// social share previews. Set NEXT_PUBLIC_SITE_URL once the domain is live;
+// on Vercel the production URL is picked up automatically until then.
+export const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000")
+).replace(/\/$/, "");
+
 export const instagramUrl = `https://instagram.com/${site.instagramHandle}`;
 
 export const whatsappUrl = `https://wa.me/${site.whatsappNumber}?text=${encodeURIComponent(

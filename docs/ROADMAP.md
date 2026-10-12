@@ -20,9 +20,13 @@ Placeholders still to replace:
    success/error states. To go live: set `RESEND_API_KEY`,
    `ENQUIRY_TO_EMAIL` and `ENQUIRY_FROM_EMAIL` (see `.env.example`) and
    verify the sending domain in Resend.
-3. **SEO & sharing:** Open Graph images for social link previews,
-   `sitemap.ts` and `robots.ts`, LocalBusiness structured data, and a
-   favicon/logo mark.
+3. ~~**SEO & sharing**~~ — **done (2026-10-12).** Branded share image
+   (`app/opengraph-image.tsx`), favicon and Apple icon, `sitemap.xml`,
+   `robots.txt`, canonical URLs and social titles per page (`lib/seo.ts`),
+   and ClothingStore structured data on the home page. To go live: set
+   `NEXT_PUBLIC_SITE_URL` to the real domain, then submit the sitemap in
+   Google Search Console. Update the structured data's street address and
+   phone once real details are in `lib/site.ts`.
 4. **Deploy:** Vercel with the custom domain, plus analytics.
 
 ## Later stages

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import CTAButton from "@/components/CTAButton";
 import Hero from "@/components/Hero";
 import SectionTitle from "@/components/SectionTitle";
 import { images } from "@/lib/images";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About",
   description: "The story of Emi and the BEYOU house.",
-};
+  path: "/about",
+});
 
 // PLACEHOLDER story copy — replace with Emi's own words.
 const values = [
