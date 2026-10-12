@@ -27,7 +27,9 @@ Placeholders still to replace:
    `NEXT_PUBLIC_SITE_URL` to the real domain, then submit the sitemap in
    Google Search Console. Update the structured data's street address and
    phone once real details are in `lib/site.ts`.
-4. **Deploy:** Vercel with the custom domain, plus analytics.
+4. ~~**Deploy**~~ — **done (2026-10-12)** on Vercel. Still to do there:
+   add the env vars from `.env.example` (Resend keys, `NEXT_PUBLIC_SITE_URL`),
+   connect the custom domain, and add analytics.
 
 ## Later stages
 - Rate limiting on the form actions (needs a store such as Upstash Redis or
